@@ -1,0 +1,36 @@
+.buttoncontainer {
+  /* padding: 1rem; */
+  margin-top: 1rem;
+  border-color: red;
+}
+
+.buttoncontainer p {
+  font-weight: 700;
+  font-size: large;
+}
+
+.parentcontainer {
+  border: 1px solid black;
+  width: 100%;
+}
+
+.thead th {
+  border: 1px solid black;
+  padding: 1rem 4rem;
+}
+
+.smallbutton {
+  display: flex;
+  justify-content: end;
+  margin-bottom: 5px;
+  /* align-items: end; */
+}
+.smallbutton button {
+  font-weight: 800;
+}
+
+.secondcontainer table td {
+  /* display: flex; */
+  text-align: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}

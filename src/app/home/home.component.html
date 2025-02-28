@@ -1,0 +1,39 @@
+<h2 style="text-align: center">Welcome,This is the Home Page</h2>
+<div style="display: flex; justify-content: center"></div>
+
+<div class="smallbutton">
+  <button (click)="getUsers()">Load Users</button>
+</div>
+
+<div class="parentcontainer">
+  <div class="secondcontainer">
+    <table>
+      <thead>
+        <tr class="thead">
+          <th>Sir No</th>
+          <th>Name</th>
+          <th>User Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Website</th>
+        </tr>
+      </thead>
+      <tbody>
+        @for (item of userList; track $index){
+        <tr>
+          <td>{{ $index + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.username }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.phone }}</td>
+          <td>{{ item.website }}</td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<button class="buttoncontainer" routerLink="/contact">
+  <p>Navigate to the Contact Page</p>
+</button>

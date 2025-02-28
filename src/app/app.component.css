@@ -1,0 +1,21 @@
+.container ul {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: gray;
+}
+
+.container li {
+  list-style: none;
+}
+
+.container li a {
+  color: white;
+  text-decoration: none;
+  font-size: large;
+}
+
+.routercontainer {
+  display: flex;
+  justify-content: center;
+}
