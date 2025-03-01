@@ -5,7 +5,7 @@
 .header-container {
   display: grid;
   margin-top: 2rem;
-  grid-template-columns: 4rem 2fr 2fr 2.2fr 2fr 1.6fr;
+  grid-template-columns: 4rem 2fr 2fr 2.2fr 2fr 1fr;
   /* width: 100%; */
   /* border: 1px solid black; */
 }
@@ -34,4 +34,18 @@
 .body-container div p {
   font-family: monospace;
   text-align: center;
+}
+
+.btncont {
+  padding: 5px 1rem;
+  display: flex;
+  align-items: center;
+  /* width: 80%; */
+  background: rgb(127, 127, 238);
+  border-radius: 10px;
+  border: none;
+}
+
+.btncont a {
+  font-size: x-small;
 }
