@@ -1,39 +1,54 @@
-<h2 style="text-align: center">Welcome,This is the Home Page</h2>
-<div style="display: flex; justify-content: center"></div>
+<ng-template #loading>
+  <p>Loading data...</p>
+</ng-template>
 
-<div class="smallbutton">
-  <button (click)="getUsers()">Load Users</button>
+<!-- Table Headers -->
+<div class="header-container">
+  <div><p>Sir No</p></div>
+  <div><p>Name</p></div>
+  <div><p>User Name</p></div>
+  <div><p>Email</p></div>
+  <div><p>Phone</p></div>
+  <div><p>Website</p></div>
 </div>
 
-<div class="parentcontainer">
-  <div class="secondcontainer">
-    <table>
-      <thead>
-        <tr class="thead">
-          <th>Sir No</th>
-          <th>Name</th>
-          <th>User Name</th>
-          <th>Email</th>
-          <th>Phone</th>
-          <th>Website</th>
-        </tr>
-      </thead>
-      <tbody>
-        @for (item of userList; track $index){
-        <tr>
-          <td>{{ $index + 1 }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.username }}</td>
-          <td>{{ item.email }}</td>
-          <td>{{ item.phone }}</td>
-          <td>{{ item.website }}</td>
-        </tr>
-        }
-      </tbody>
-    </table>
+<!-- Table Data -->
+<div class="main_body_container">
+  @for (item of userList; track $index) {
+  <div
+    class="body-container"
+    (click)="selectUser(item)"
+    style="cursor: pointer"
+  >
+    <div>
+      <p>{{ $index + 1 }}</p>
+    </div>
+    <div>
+      <p>{{ item.name }}</p>
+    </div>
+    <div>
+      <p>{{ item.username }}</p>
+    </div>
+    <div>
+      <p>{{ item.email }}</p>
+    </div>
+    <div>
+      <p>{{ item.phone }}</p>
+    </div>
+    <div>
+      <p>{{ item.website }}</p>
+    </div>
   </div>
+  }
 </div>
 
-<button class="buttoncontainer" routerLink="/contact">
-  <p>Navigate to the Contact Page</p>
-</button>
+<!-- User Details Section -->
+<div *ngIf="selectedUser" class="details-container">
+  <h3>User Details</h3>
+  <p><strong>Name:</strong> {{ selectedUser.name }}</p>
+  <p><strong>Username:</strong> {{ selectedUser.username }}</p>
+  <p><strong>Email:</strong> {{ selectedUser.email }}</p>
+  <p><strong>Phone:</strong> {{ selectedUser.phone }}</p>
+  <p><strong>Website:</strong> {{ selectedUser.website }}</p>
+  <button (click)="closeDetails()">Close</button>
+</div>

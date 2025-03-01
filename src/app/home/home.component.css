@@ -1,36 +1,37 @@
-.buttoncontainer {
-  /* padding: 1rem; */
-  margin-top: 1rem;
-  border-color: red;
+.header-container {
+  display: grid;
+  /* grid-row: 6; */
+  grid-template-columns: 4rem 2fr 2fr 2.2fr 2fr 1.6fr;
+  /* width: 100%; */
+  /* border: 1px solid black; */
 }
 
-.buttoncontainer p {
+.header-container p {
+  border: 1px solid black;
+  padding: 0.5rem 0;
+  font-family: monospace;
   font-weight: 700;
   font-size: large;
-}
-
-.parentcontainer {
-  border: 1px solid black;
-  width: 100%;
-}
-
-.thead th {
-  border: 1px solid black;
-  padding: 1rem 4rem;
-}
-
-.smallbutton {
-  display: flex;
-  justify-content: end;
-  margin-bottom: 5px;
-  /* align-items: end; */
-}
-.smallbutton button {
-  font-weight: 800;
-}
-
-.secondcontainer table td {
-  /* display: flex; */
   text-align: center;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.body-container {
+  display: grid;
+  /* grid-row: 6; */
+  grid-template-columns: 4rem 2fr 2fr 2.2fr 2fr 1.6fr;
+  border: 1px solid black;
+}
+
+.body-container div {
+  border-right: 1px solid black;
+  padding: 0.4rem;
+}
+
+.body-container div p {
+  font-family: monospace;
+  text-align: center;
+}
+
+.main_body_container {
+  border: 1px solid black;
 }
