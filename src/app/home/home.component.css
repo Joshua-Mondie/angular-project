@@ -1,6 +1,10 @@
+/* .main_container {
+  position: relative;
+} */
+
 .header-container {
   display: grid;
-  /* grid-row: 6; */
+  margin-top: 2rem;
   grid-template-columns: 4rem 2fr 2fr 2.2fr 2fr 1.6fr;
   /* width: 100%; */
   /* border: 1px solid black; */
@@ -30,8 +34,4 @@
 .body-container div p {
   font-family: monospace;
   text-align: center;
-}
-
-.main_body_container {
-  border: 1px solid black;
 }

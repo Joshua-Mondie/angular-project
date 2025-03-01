@@ -31,6 +31,9 @@
 }
 
 .routercontainer {
-  display: flex;
-  justify-content: center;
+  position: relative;
+}
+
+.nav_container {
+  top: 0;
 }
