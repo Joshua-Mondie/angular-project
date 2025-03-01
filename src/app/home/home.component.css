@@ -35,15 +35,3 @@
   font-family: monospace;
   text-align: center;
 }
-
-.main_body_container {
-  /* border: 1px solid black; */
-}
-
-.details-container {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  /* background: ; */
-  border: 1px solid red;
-}

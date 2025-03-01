@@ -1,0 +1,17 @@
+<div class="container">
+  <div *ngIf="user" class="card">
+    <div class="card-header bg-primary text-white">
+      <h5>User Details</h5>
+    </div>
+    <div class="card-body">
+      <p><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>Username:</strong> {{ user.username }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+      <p><strong>Phone:</strong> {{ user.phone }}</p>
+      <p><strong>Website:</strong> {{ user.website }}</p>
+    </div>
+    <div class="card-footer text-end">
+      <button class="btn btn-secondary" routerLink="/">Back to Home</button>
+    </div>
+  </div>
+</div>

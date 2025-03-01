@@ -20,54 +20,54 @@
       <!-- Table Body -->
       <tbody>
         <tr
-          *ngFor="let item of userList; let i = index"
-          (click)="selectUser(item)"
+          *ngFor="let user of userList; let i = index"
           style="cursor: pointer"
         >
           <td>{{ i + 1 }}</td>
-          <td>{{ item.name }}</td>
-          <td>{{ item.username }}</td>
-          <td>{{ item.email }}</td>
-          <td>{{ item.phone }}</td>
-          <td>{{ item.website }}</td>
+          <td>
+            <a
+              [routerLink]="['/users', user.id]"
+              class="text-primary text-decoration-none"
+            >
+              {{ user.name }}
+            </a>
+          </td>
+          <td>
+            <a
+              [routerLink]="['/users', user.id]"
+              class="text-primary text-decoration-none"
+            >
+              {{ user.username }}
+            </a>
+          </td>
+          <td>
+            <a
+              [routerLink]="['/users', user.id]"
+              class="text-primary text-decoration-none"
+            >
+              {{ user.email }}
+            </a>
+          </td>
+          <td>
+            <a
+              [routerLink]="['/users', user.id]"
+              class="text-primary text-decoration-none"
+            >
+              {{ user.phone }}
+            </a>
+          </td>
+          <td>
+            <a
+              [routerLink]="['/users', user.id]"
+              class="text-primary text-decoration-none"
+            >
+              {{ user.website }}
+            </a>
+          </td>
         </tr>
       </tbody>
     </table>
   </div>
 
   <!-- User Details Section -->
-  <div
-    *ngIf="selectedUser"
-    class="modal fade"
-    id="userDetailsModal"
-    tabindex="-1"
-    aria-labelledby="userModalLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title text-primary" id="userModalLabel">
-            User Details
-          </h5>
-          <button
-            type="button"
-            class="btn-close"
-            (click)="closeDetails()"
-            aria-label="Close"
-          ></button>
-        </div>
-        <div class="modal-body">
-          <p><strong>Name:</strong> {{ selectedUser?.name }}</p>
-          <p><strong>Username:</strong> {{ selectedUser?.username }}</p>
-          <p><strong>Email:</strong> {{ selectedUser?.email }}</p>
-          <p><strong>Phone:</strong> {{ selectedUser?.phone }}</p>
-          <p><strong>Website:</strong> {{ selectedUser?.website }}</p>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-danger" (click)="closeDetails()">Close</button>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>

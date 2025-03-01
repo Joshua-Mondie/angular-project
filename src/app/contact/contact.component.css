@@ -1,3 +1,5 @@
-.buttoncontainer {
+.textStyle {
   padding: 1rem;
+  font-size: large;
+  font-weight: 700;
 }

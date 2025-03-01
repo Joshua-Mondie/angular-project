@@ -2,11 +2,12 @@ import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { User } from '../models/user';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
@@ -14,8 +15,9 @@ export class HomeComponent implements OnInit {
   userList: User[] = [];
   isLoading = true;
   selectedUser: any = null;
+  private modalInstance: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     console.log('HomeComponent instantiated');
     console.log('HttpClient:', this.http);
   }
@@ -37,11 +39,7 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  selectUser(user: any) {
-    this.selectedUser = user; // Set selected user details
-  }
-
-  closeDetails() {
-    this.selectedUser = null; // Close details view
+  selectUser(user: User) {
+    this.router.navigate(['/users', user.id]); // Navigate to user details page
   }
 }
