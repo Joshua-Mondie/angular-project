@@ -11,9 +11,8 @@
           <th scope="col">S/N</th>
           <th scope="col">Name</th>
           <th scope="col">Username</th>
-          <th scope="col">Email</th>
-          <th scope="col">Phone</th>
-          <th scope="col">Website</th>
+          <th scope="" style="width: 8rem">Actions</th>
+          <!-- Added Actions Column -->
         </tr>
       </thead>
 
@@ -32,42 +31,23 @@
               {{ user.name }}
             </a>
           </td>
-          <td>
-            <a
-              [routerLink]="['/users', user.id]"
-              class="text-primary text-decoration-none"
-            >
-              {{ user.username }}
-            </a>
-          </td>
-          <td>
-            <a
-              [routerLink]="['/users', user.id]"
-              class="text-primary text-decoration-none"
-            >
-              {{ user.email }}
-            </a>
-          </td>
-          <td>
-            <a
-              [routerLink]="['/users', user.id]"
-              class="text-primary text-decoration-none"
-            >
-              {{ user.phone }}
-            </a>
-          </td>
-          <td>
-            <a
-              [routerLink]="['/users', user.id]"
-              class="text-primary text-decoration-none"
-            >
-              {{ user.website }}
-            </a>
+          <td>{{ user.username }}</td>
+
+          <!-- Actions Column -->
+          <td class="">
+            <div class="d-flex justify-content-center align-items-center">
+              <button class="btncont">
+                <a
+                  [routerLink]="['/users', user.id]"
+                  class="text-white text-decoration-none"
+                >
+                  View Details
+                </a>
+              </button>
+            </div>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-
-  <!-- User Details Section -->
 </div>
