@@ -1,6 +1,6 @@
 
 export default {
-  basePath: 'https://github.com/Joshua-Mondie/angular-project.git',
+  basePath: '/angular-project',
   supportedLocales: {
   "en-US": ""
 },
