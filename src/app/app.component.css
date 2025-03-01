@@ -1,8 +1,12 @@
 .container ul {
   display: flex;
-  justify-content: space-between;
-  padding: 2rem;
-  background-color: gray;
+  /* justify-content: space-between; */
+  padding: 1.5rem;
+  background-color: #1e1e2e;
+
+  /* align-items: end; */
+  justify-content: center;
+  gap: 3rem;
 }
 
 .container li {
@@ -13,6 +17,17 @@
   color: white;
   text-decoration: none;
   font-size: large;
+  font-family: "Courier New", Courier, monospace;
+  /* font-family: Georgia, "Times New Roman", Times, serif; */
+}
+
+.active-link {
+  color: #4c9eeb !important;
+  font-weight: bold;
+}
+
+.container li a:hover {
+  color: #a6accd;
 }
 
 .routercontainer {
