@@ -1,26 +1,28 @@
-<nav class="container">
-  <ul>
-    <li>
-      <a
-        routerLink="home"
-        routerLinkActive="active-link"
-        [routerLinkActiveOptions]="{ exact: true }"
-        >Home</a
-      >
-    </li>
-    <li>
-      <a routerLink="contact" routerLinkActive="active-link">Contact</a>
-    </li>
-    <li>
-      <a routerLink="about" routerLinkActive="active-link">About</a>
-    </li>
-  </ul>
+<div class="routercontainer">
+  <nav class="container">
+    <ul>
+      <li>
+        <a
+          routerLink="home"
+          routerLinkActive="active-link"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a routerLink="contact" routerLinkActive="active-link">Contact</a>
+      </li>
+      <li>
+        <a routerLink="about" routerLinkActive="active-link">About</a>
+      </li>
+    </ul>
 
-  <!-- <h1 routerLink="home">Home</h1>
+    <!-- <h1 routerLink="home">Home</h1>
   <h1 routerLink="about">Contact</h1>
   <h1 routerLink="contact">About</h1> -->
-</nav>
+  </nav>
 
-<div class="routercontainer">
-  <router-outlet></router-outlet>
+  <div style="background-color: rgba(248, 245, 245, 0.699)">
+    <router-outlet></router-outlet>
+  </div>
 </div>

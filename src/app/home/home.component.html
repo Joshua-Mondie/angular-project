@@ -1,54 +1,73 @@
-<ng-template #loading>
-  <p>Loading data...</p>
-</ng-template>
+<div class="container mt-4">
+  <ng-template #loading>
+    <p class="text-center">Loading data...</p>
+  </ng-template>
 
-<!-- Table Headers -->
-<div class="header-container">
-  <div><p>Sir No</p></div>
-  <div><p>Name</p></div>
-  <div><p>User Name</p></div>
-  <div><p>Email</p></div>
-  <div><p>Phone</p></div>
-  <div><p>Website</p></div>
-</div>
+  <div class="container">
+    <table class="table table-bordered table-hover">
+      <!-- Table Head -->
+      <thead class="table-dark">
+        <tr>
+          <th scope="col">S/N</th>
+          <th scope="col">Name</th>
+          <th scope="col">Username</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th scope="col">Website</th>
+        </tr>
+      </thead>
 
-<!-- Table Data -->
-<div class="main_body_container">
-  @for (item of userList; track $index) {
+      <!-- Table Body -->
+      <tbody>
+        <tr
+          *ngFor="let item of userList; let i = index"
+          (click)="selectUser(item)"
+          style="cursor: pointer"
+        >
+          <td>{{ i + 1 }}</td>
+          <td>{{ item.name }}</td>
+          <td>{{ item.username }}</td>
+          <td>{{ item.email }}</td>
+          <td>{{ item.phone }}</td>
+          <td>{{ item.website }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- User Details Section -->
   <div
-    class="body-container"
-    (click)="selectUser(item)"
-    style="cursor: pointer"
+    *ngIf="selectedUser"
+    class="modal fade"
+    id="userDetailsModal"
+    tabindex="-1"
+    aria-labelledby="userModalLabel"
+    aria-hidden="true"
   >
-    <div>
-      <p>{{ $index + 1 }}</p>
-    </div>
-    <div>
-      <p>{{ item.name }}</p>
-    </div>
-    <div>
-      <p>{{ item.username }}</p>
-    </div>
-    <div>
-      <p>{{ item.email }}</p>
-    </div>
-    <div>
-      <p>{{ item.phone }}</p>
-    </div>
-    <div>
-      <p>{{ item.website }}</p>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title text-primary" id="userModalLabel">
+            User Details
+          </h5>
+          <button
+            type="button"
+            class="btn-close"
+            (click)="closeDetails()"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="modal-body">
+          <p><strong>Name:</strong> {{ selectedUser?.name }}</p>
+          <p><strong>Username:</strong> {{ selectedUser?.username }}</p>
+          <p><strong>Email:</strong> {{ selectedUser?.email }}</p>
+          <p><strong>Phone:</strong> {{ selectedUser?.phone }}</p>
+          <p><strong>Website:</strong> {{ selectedUser?.website }}</p>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-danger" (click)="closeDetails()">Close</button>
+        </div>
+      </div>
     </div>
   </div>
-  }
-</div>
-
-<!-- User Details Section -->
-<div *ngIf="selectedUser" class="details-container">
-  <h3>User Details</h3>
-  <p><strong>Name:</strong> {{ selectedUser.name }}</p>
-  <p><strong>Username:</strong> {{ selectedUser.username }}</p>
-  <p><strong>Email:</strong> {{ selectedUser.email }}</p>
-  <p><strong>Phone:</strong> {{ selectedUser.phone }}</p>
-  <p><strong>Website:</strong> {{ selectedUser.website }}</p>
-  <button (click)="closeDetails()">Close</button>
 </div>

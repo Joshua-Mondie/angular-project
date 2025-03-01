@@ -1,6 +1,10 @@
+/* .main_container {
+  position: relative;
+} */
+
 .header-container {
   display: grid;
-  /* grid-row: 6; */
+  margin-top: 2rem;
   grid-template-columns: 4rem 2fr 2fr 2.2fr 2fr 1.6fr;
   /* width: 100%; */
   /* border: 1px solid black; */
@@ -33,5 +37,13 @@
 }
 
 .main_body_container {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+}
+
+.details-container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  /* background: ; */
+  border: 1px solid red;
 }
