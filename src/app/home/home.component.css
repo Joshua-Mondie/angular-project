@@ -38,6 +38,8 @@
 
 .btncont {
   padding: 5px 1rem;
+  display: flex;
+  align-items: center;
   /* width: 80%; */
   background: rgb(127, 127, 238);
   border-radius: 10px;
@@ -45,5 +47,5 @@
 }
 
 .btncont a {
-  font-size: small;
+  font-size: x-small;
 }
